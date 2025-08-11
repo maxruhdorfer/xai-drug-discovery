@@ -34,11 +34,11 @@ We train these networks to generate graph representations that we pass to a line
 
 We perform a hyperparameter search to identify the best model and evaluate the performances according to accuracy, balanced accuracy and the area under the ROC (Receiver Operating Characteristic) curve. The performances of the final models on the test set are visualized in the confusion matrix and the ROC curve below.
 
-![GAT Confusion Matrix](./figures/gat_conf.png)
-![GIN Confusion Matrix](./figures/gin_conf.png)
-![MPNN Confusion Matrix](./figures/mpnn_conf.png)
+<img src="./figures/gat_conf.png" alt="GAT Confusion Matrix" width="500"/>
+<img src="./figures/gin_conf.png" alt="GIN Confusion Matrix" width="500"/>
+<img src="./figures/mpnn_conf.png" alt="MPNN Confusion Matrix" width="500"/>
 
-<img src="./figures/roc.png" alt="ROC Curve" width="400"/>
+<img src="./figures/roc.png" alt="ROC Curve" width="500"/>
 
 The above ROC curve also shows that all models have a similar performance with a slight advantage for the GAT architecture.
 
@@ -66,12 +66,12 @@ A good explainability algorithm yields both sufficient and necessary explanation
 
 In our study the attention network seems to be best suited to find reliable, i.e. sufficient and necessary, explanation for the model predictions (as can be seen below). For the MPNN architecture we can find sufficient explanations but they are not as necessary as for the GAT network. For the GIN architecture we were unfortunately not able to find good explanations.
 
-<img src="./figures/fidelity.png" alt="Fidelity as a function of the number of most important features and edges topk" width="400"/>
+<img src="./figures/fidelity.png" alt="Fidelity as a function of the number of most important features and edges topk" width="500"/>
 
 We can also compare the GNNExplainer predictions for `topk=10` for two example graphs and all considered architectures. We choose one example graph which is non-toxic and that all models classify as non-toxic and one graph that is toxic and all graphs classify as non-toxic. Ideally GNNExplainer applied to all architectures is going to find the same key features that lead to the prediction. That would be a very robust result that could be shown to a chemist or biologist who might be able to identify specific molecular properties that are responsible for the prediction. This could give new insights to what causes toxicity. The findings for the GAT and GIN architecture are shown below, where the blue shading encodes how important features and edges were in the prediction.
 
-![GAT Explanation by GNNExplainer](./figures/gat_explanation.png)
-![GIN Explanation by GNNExplainer](./figures/gin_explanation.png)
+<img src="./figures/gat_explanation.png" alt="GAT Explanation by GNNExplainer" width="500"/>
+<img src="./figures/gin_explanation.png" alt="GIN Explanation by GNNExplainer" width="500"/>
 
 ## Future Prospects and Conclusion
 
